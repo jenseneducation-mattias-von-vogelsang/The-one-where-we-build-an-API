@@ -1,0 +1,30 @@
+{
+  "products": [
+    {
+      "name": "GPhone",
+      "price": "10,000",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    },
+    {
+      "name": "Playstation 8 Ultra",
+      "price": "3,500",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    },
+    {
+      "name": "XBOX 1/2",
+      "price": "3,200",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    },
+    {
+      "name": "Nintendo Swotch",
+      "price": "4,000",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    },
+    {
+      "name": "Samsing Galaxy 20",
+      "price": "10,000",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    }
+  ],
+  "shoppingCart": []
+}
