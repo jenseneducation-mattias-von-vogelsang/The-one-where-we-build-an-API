@@ -24,13 +24,13 @@ exports.addToCart = productName => {
 
   if (typeof findProduct === "undefined") {
     response = {
-      success: "FALSE",
+      success: false,
       status: "400",
       message: "Unable to find product."
     };
   } else if (typeof checkCart !== "undefined") {
     response = {
-      success: "FALSE",
+      success: false,
       status: "400",
       message: "Product already in cart."
     };
@@ -43,7 +43,7 @@ exports.addToCart = productName => {
       .push(findProduct)
       .write();
     response = {
-      success: "TRUE",
+      success: true,
       status: "201",
       message: "Added product to cart.",
       data: addProduct
@@ -61,7 +61,7 @@ exports.removeFromCart = productName => {
 
   if (typeof findProduct === "undefined") {
     response = {
-      success: "FALSE",
+      success: false,
       status: "400",
       message: "Unable to find and remove product from cart."
     };
@@ -71,7 +71,7 @@ exports.removeFromCart = productName => {
       .remove({ name: productName })
       .write();
     response = {
-      success: "TRUE",
+      success: true,
       status: "200",
       message: "Product removed from cart.",
       data: removeProduct
