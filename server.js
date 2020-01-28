@@ -1,9 +1,5 @@
 const express = require("express");
-//const lowdb = require("lowdb");
 const app = express();
-//const fileSync = require("lowdb/adapters/FileSync");
-//const adapter = new fileSync("database.json");
-//const database = lowdb(adapter);
 const bodyParser = require("body-parser");
 const port = process.env.port || 8000;
 const databaseOperations = require("./local_modules/databaseOperations");
