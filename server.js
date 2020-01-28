@@ -8,26 +8,26 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/api/products", async (req, res) => {
+app.get("/products", async (req, res) => {
   const data = await databaseOperations.getProducts();
   res.send(data);
 });
 
-app.post("/api/cart", (req, res) => {
+app.post("/cart/product", (req, res) => {
   const product = req.body;
   const data = databaseOperations.addToCart(product.name);
   res.status(data.status);
   res.send(data);
 });
 
-app.delete("/api/cart", (req, res) => {
+app.delete("/cart/product", (req, res) => {
   const product = req.body;
   const data = databaseOperations.removeFromCart(product.name);
   res.status(data.status);
   res.send(data);
 });
 
-app.get("/api/cart", async (req, res) => {
+app.get("/cart", async (req, res) => {
   const data = await databaseOperations.getCart();
   res.send(data);
 });
