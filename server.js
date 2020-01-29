@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const port = process.env.port || 8000;
-/*** LOCAL MODULE WITH DATABASE OPERTIONS ***/
+/*** LOCAL MODULE WITH DATABASE OPERATIONS ***/
 const databaseOperations = require("./local_modules/databaseOperations");
 
 app.use(express.static("public"));
@@ -35,7 +35,7 @@ app.get("/cart", async (req, res) => {
   res.send(data);
 });
 
-/*** LISTEN TO FIND OUT PORT & INITIATE DATABASE ***/
+/*** LISTEN ON SERVER START TO FIND OUT PORT & INITIATE DATABASE ***/
 app.listen(port, () => {
   console.log("Server started on port ", port);
   databaseOperations.initiateDatabase();
