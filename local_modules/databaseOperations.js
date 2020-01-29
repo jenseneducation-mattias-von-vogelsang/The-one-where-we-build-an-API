@@ -1,8 +1,10 @@
+/*** IMPORTS ***/
 const lowdb = require("lowdb");
 const fileSync = require("lowdb/adapters/FileSync");
 const adapter = new fileSync("database.json");
 const database = lowdb(adapter);
 
+/*** FUNCTIONS THAT ARE EXPORTED ***/
 exports.getProducts = async () => {
   return await database.get("products");
 };
@@ -22,6 +24,7 @@ exports.addToCart = productName => {
     .write();
   let response = "";
 
+  /*** IF/ELSE STATEMENT TO CHECK PRODUCTS & CART ***/
   if (typeof findProduct === "undefined") {
     response = {
       success: false,
@@ -59,6 +62,7 @@ exports.removeFromCart = productName => {
     .find({ name: productName })
     .write();
 
+  /*** IF/ELSE STATEMENT TO CHECK IF PRODUCT EXISTS IN CART ***/
   if (typeof findProduct === "undefined") {
     response = {
       success: false,
@@ -80,6 +84,7 @@ exports.removeFromCart = productName => {
   return response;
 };
 
+/*** INITIATE DATABASE IF THERE IS NONE ***/
 exports.initiateDatabase = () => {
   const productsInit = database.has("products").value();
   const shoppingCartInit = database.has("shoppingCart").value();
